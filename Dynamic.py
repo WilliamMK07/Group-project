@@ -43,3 +43,29 @@ def max(activities,time,time_table):
 
 
 dynamic("Lists/input_10 (1).txt")
+
+
+
+#dp Table   attempt 1 
+#, how it works  creates a table  with enjoyment and time   and adds  activitys for best enjoyment  for every  number of activies  for every maxing time 
+#  for example  0 activities the best enjoyement will be 0  for each ax time ,  1 activity the best enjoyment will be tdecided best on the  available time  and so forth 
+ def dp_table( activities,n,time):
+     #storing  maximum enjoyment and time 
+     dp = [[0 for  i in range (time+1)
+               for  k in range(n+1)] # creates a 2d table with 0s 
+           
+    for i  in range (1,n+1):  # decide best enjoyement deepending on time 
+           for t  in range(time+1)
+            activity_time = int(activities[i-1][1])
+            activity_enjoyment =  int(activities[i-1][3])
+            #
+            if activity_time <= t:
+                dp[i][t] = max(dp[i-1][t],dp[i-1][t-activity_time] + activity enjoyment)
+            else:
+                dp[i][t] = dp[i-1][t] 
+    return dp 
+           
+           
+           
+     
+     
