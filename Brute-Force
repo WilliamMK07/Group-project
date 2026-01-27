@@ -79,6 +79,6 @@ def final_output(file):
     print(f"Execution time: {speed:.4f} seconds")
 
 
+#/workspaces/Group-project/Lists/input_10 (1).txt
 
-
-final_output("input_large.txt")
+final_output("Lists/input_10 (1).txt")
