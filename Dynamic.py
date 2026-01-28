@@ -56,13 +56,14 @@ dynamic("Lists/input_10 (1).txt")
            
     for i  in range (1,n+1):  # decide best enjoyement deepending on time 
            for t  in range(time+1)
-            activity_time = int(activities[i-1][1])
-            activity_enjoyment =  int(activities[i-1][3])
+            activity_time = int(activities[i-1][1]) # gets time for current activity 
+            activity_enjoyment =  int(activities[i-1][3]) # gets enjoyment for current  activity 
             #
-            if activity_time <= t:
-                dp[i][t] = max(dp[i-1][t],dp[i-1][t-activity_time] + activity enjoyment)
+            if activity_time <= t: #  compares  activity time to  the  current time limit  and gives two options 
+                #   option one takes the activity and  adds the enjoyment 
+                dp[i][t] = max(dp[i-1][t],dp[i-1][t-activity_time] + activity enjoyment)  finds the highest 
             else:
-                dp[i][t] = dp[i-1][t] 
+                dp[i][t] = dp[i-1][t] #  option 2 skips  the activity and go to the next one 
     return dp 
            
            
