@@ -31,6 +31,7 @@ def brute_combo(file):
     for i in range(len(options)):
         # Sets the inital conditions inside the loop
         h = False
+        b = False
         t = False
         total_h = 0
         total_b = 0
@@ -41,6 +42,8 @@ def brute_combo(file):
             total_t += int(options[i][j][1])
         if total_h > max_happiness: # evaulates if the happiness is greater than the previous happiness
             h = True
+        if total_b <= budget: # checks if the budget is less than the budget limit
+            b = True
         if total_t <= time: # checks if the time is less than the time limit
             t = True
         if h and t and b: # checks if all 3 conditions are true then changes the max_happiness and updates the budget and time
