@@ -81,12 +81,12 @@ def dynamic(file):
 #dp Table   attempt 1 
 #, how it works  creates a table  with enjoyment and time   and adds  activitys for best enjoyment  for every  number of activies  for every maxing time 
 #  for example  0 activities the best enjoyement will be 0  for each ax time ,  1 activity the best enjoyment will be tdecided best on the  available time  and so forth 
-def dp_table(activities,n,time):
+def dp_table(activities,n,time):# creates table used to calculate best happiness in given time
     #storing  maximum enjoyment and time 
     dp = [[0 for  i in range (time+1)]for  k in range(n+1)] # creates a 2d table with 0s 
            
-    for i  in range (1,n+1):  # decide best enjoyement deepending on time 
-           for t  in range(time+1):
+    for i in range (1,n+1):  # decide best enjoyement deepending on time 
+           for t in range(time+1):
             activity_time = int(activities[i-1][1]) # gets time for current activity 
             activity_enjoyment =  int(activities[i-1][3]) # gets enjoyment for current  activity 
 
@@ -103,29 +103,31 @@ def dp_table(activities,n,time):
     return dp
 
 def dp_best(dp,activities,n,time,budget):
-    activities_list = []
-    current = [dp[n][time],n,time]
+    activities_list = []# empty list to store activities used
+    current = [dp[n][time],n,time] # current postion used in table stored as [enjoyment of square,row,column]
     #print(current)
     #print(dp[current[1]][time], dp[current[1]-1][time])
-    activities_list = []
-    while current[0] != 0:
+    while current[0] != 0: # if square on is empty stop
         #print(current)
         #print(dp[current[1]][current[2]], dp[current[1]-1][current[2]])
-        if dp[current[1]][current[2]] > dp[current[1]-1][current[2]]:
-            #print(activities[current[1]-1],"sdfghjk")
-            activities_list.append(activities[current[1]-1])
+        #compares if square in current position has a higher enjoyment value than square in row above
+        if dp[current[1]][current[2]] > dp[current[1]-1][current[2]]: 
+            # if it does it means the activity was used
+            activities_list.append(activities[current[1]-1]) #adds activity corresponding to row in table to list
             current = [dp[current[1]-1][current[2]-int(activities[current[1]-1][1])],current[1]-1,current[2]-int(activities[current[1]-1][1])]
+            #changes value stored in current
         else:
             current[1] = current[1]-1
+            #sets row in column to one less
         
     #print(activities_list,"GHJK")
-    time_used = 0
-    cost = 0
-    enjoyment = 0
-    for i in range(len(activities_list)):
-        time_used += int(activities_list[i][1]) 
-        cost += int(activities_list[i][2])
-        enjoyment += int(activities_list[i][3])
+    time_used = 0 # used to see how much time was usd in chosen path
+    cost = 0 # used to calculate the total cost
+    enjoyment = 0 # used to calculate totoal happiness
+    for i in range(len(activities_list)): # loop through each activity used
+        time_used += int(activities_list[i][1]) # add time on to total
+        cost += int(activities_list[i][2]) # add cost on to total
+        enjoyment += int(activities_list[i][3]) # add happiness on to total
     return activities_list, enjoyment, cost, time_used, budget,time
 
 def final_output(file): # this is the function that creates the final output of the functions. 
