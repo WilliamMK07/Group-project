@@ -1,5 +1,6 @@
 from itertools import chain, combinations
 import time
+import sys
 
 # this is the main function that calculates the best combination using the brute-force method
 def brute_combo(file):
@@ -176,4 +177,5 @@ def final_output(file): # this is the function that creates the final output of 
 
 #/workspaces/Group-project/Lists/input_10 (1).txt
 
-final_output("Lists/input_10 (1).txt")
+if __name__ == "__main__":
+    final_output(sys.argv[1])  
