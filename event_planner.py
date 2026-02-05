@@ -173,4 +173,4 @@ def final_output(file): # this is the function that creates the final output of 
 
 #/workspaces/Group-project/Lists/input_10 (1).txt
 
-final_output("Lists/input_10 (1).txt")
+final_output("Lists/input_10.txt")
