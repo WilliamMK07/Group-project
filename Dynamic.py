@@ -50,7 +50,7 @@ def dp_best(dp,activities,n,time,budget):
     #print(current)
     #print(dp[current[1]][time], dp[current[1]-1][time])
     activities_list = []
-    while current[0] != 0:
+    while current[0] != 0  and current[1]>0:
         #print(current)
         #print(dp[current[1]][current[2]], dp[current[1]-1][current[2]])
         if dp[current[1]][current[2]] > dp[current[1]-1][current[2]]:
