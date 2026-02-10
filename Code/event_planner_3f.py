@@ -177,7 +177,7 @@ def final_output(file): # this is the function that creates the final output of 
     print(f"Execution time: {speed:.4f} seconds")
 
 
-#/workspaces/Group-project/Lists/input_10 (1).txt
+
 
 if __name__ == "__main__":
     final_output(sys.argv[1])    
