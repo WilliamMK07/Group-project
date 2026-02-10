@@ -47,7 +47,7 @@ def brute_combo(file):
             t = True
         if total_b <= budget:
             b = True
-        if h and t: # checks if all 3 conditions are true then changes the max_happiness and updates the budget and time
+        if h and t and b: # checks if all 3 conditions are true then changes the max_happiness and updates the budget and time
             result = options[i] # stores the subset of the activities as the result
             max_happiness = total_h
             max_budget = total_b
