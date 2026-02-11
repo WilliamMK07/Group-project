@@ -60,23 +60,43 @@ def time_taken_d():
 def main():
     #runs the time_taken file and saves the results
     resb = time_taken_b()
-    resb = np.log(resb)
-
     resd = time_taken_d()
+    spf = []
+    for i in range(len(resb)):
+        spf.append(resb[i] / resd[i])
+    spf = np.log(spf)
+
+    resb = np.log(resb)
     resd = np.log(resd)
     # takes a log of the times
     files = [5,10,15,20]
     # sets the names
     names = ["Brute Force", "Dynamic"]
     
-    # matplotlib function to plot the graphs 
+    # matplotlib function to plot the graphs with the time taken
     plt.plot(files,resb, label = names[0])
     plt.plot(files,resd, label = names[1])
+    plt.title("Time taken for each algorithm")
     plt.xlabel("File Size")
     plt.ylabel("Log of Time taken")
     plt.legend()
     plt.autoscale()
-    plt.savefig("plot.png")
+    plt.savefig("plot1.png")
+    plt.close()
+
+    # matplotlib to plot the speedup factor
+
+    plt.bar(files,spf, color = ("Blue","Orange","Green","Purple"))
+    plt.title("Speedup factor for the algorithms")
+    plt.xlabel("File Size")
+    plt.ylabel("Log of the speedup factor")
+    
+    plt.autoscale()
+    plt.savefig("plot2.png")
+
+
+
+
 
 
 if __name__ == "__main__":
