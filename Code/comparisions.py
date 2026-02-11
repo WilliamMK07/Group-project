@@ -1,3 +1,4 @@
+
 import matplotlib.pyplot as plt 
 from event_planner import brute_combo, dynamic 
 import time
@@ -20,13 +21,17 @@ def time_taken(file):
 def main(file):
     
     res = time_taken(file)
+    print(res)
     times = np.log(res)
-    plt.bar(times[0],"Brute Force")
-    plt.bar(times[1],"Dynamic programming")
+    names = ["Brute Force", "Dynamic"]
+    
+
+    plt.bar(names[0],times[0])
+    plt.bar(names[1],times[1])
     plt.xlabel("Algorithms")
     plt.ylabel("log of time taken")
-    plt.show()
-
+    plt.autoscale()
+    plt.savefig("plot.png")
 
 
 if __name__ == "__main__":
