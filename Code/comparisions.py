@@ -15,14 +15,21 @@ def time_taken_b():
     btime1 = end1 - start1
 
     start2 = time.time()
-    brute_combo('Input_Files/input_medium.txt')
+    brute_combo('Input_Files/input_10.txt')
     end2 = time.time()
     btime2 = end2 - start2
 
     start3 = time.time()
-    brute_combo('Input_Files/input_large.txt')
+    brute_combo('Input_Files/input_15.txt')
     end3 = time.time()
     btime3 = end3 - start3
+
+    start4 = time.time()
+    brute_combo('Input_Files/input_20.txt')
+    end4 = time.time()
+    btime4 = end4 - start4
+
+    return btime1, btime2, btime3, btime4
 
 def time_taken_d():
     # finds the time taken for the brute force algorithm to execute on each file size
@@ -32,33 +39,41 @@ def time_taken_d():
     dtime1 = end1 - start1
 
     start2 = time.time()
-    dynamic('Input_Files/input_medium.txt')
+    dynamic('Input_Files/input_10.txt')
     end2 = time.time()
     dtime2 = end2 - start2
 
     start3 = time.time()
-    dynamic('Input_Files/input_large.txt')
+    dynamic('Input_Files/input_15.txt')
     end3 = time.time()
     dtime3 = end3 - start3
 
+    start4 = time.time()
+    dynamic('Input_Files/input_20.txt')
+    end4 = time.time()
+    dtime4 = end4 - start4
+
 
     # returns both times as an array
-    return dtime1, dtime2, dtime3
+    return dtime1, dtime2, dtime3, dtime4
 
 def main():
     #runs the time_taken file and saves the results
     resb = time_taken_b()
+    resb = np.log(resb)
+
     resd = time_taken_d()
+    resd = np.log(resd)
     # takes a log of the times
-    files = ["Small","Medium","Large"]
+    files = [5,10,15,20]
     # sets the names
     names = ["Brute Force", "Dynamic"]
     
-    # runs the brute force algorithm approach 
-    plt.bar(files,resb, label = names[0])
-    plt.bar(files, resd, label = names[1])
-    plt.xlabel("Algorithms")
-    plt.ylabel("log of time taken")
+    # matplotlib function to plot the graphs 
+    plt.plot(files,resb, label = names[0])
+    plt.plot(files,resd, label = names[1])
+    plt.xlabel("File Size")
+    plt.ylabel("Log of Time taken")
     plt.legend()
     plt.autoscale()
     plt.savefig("plot.png")
