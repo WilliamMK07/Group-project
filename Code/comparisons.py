@@ -79,7 +79,7 @@ def main():
     plt.ylabel("Log of Time taken")
     plt.legend()
     plt.autoscale()
-    plt.savefig("plot1.png")
+    plt.savefig("LineGraph.png")
     plt.close()
 
     # matplotlib to plot the speedup factor
@@ -90,7 +90,7 @@ def main():
     plt.ylabel("Log of the speedup factor")
     
     plt.autoscale()
-    plt.savefig("plot2.png")
+    plt.savefig("BarChart.png")
 
 
 
