@@ -10,5 +10,5 @@ The main dependancy for running this program is having python installed. Having 
 
 There are several libraries used in the execution of this program and the main files for creating the event planner use only built in python modules. The modules time and sys are imported as well as chain and combinations from itertools. As these are all built-in no external dependancies need to be installed.  
 
-If you want to run the comparisons.py file there are a few different depenancies that will need to be installed prior to running the file. Firstly, the libraries matplotlib and numpy must be installed on the selected python interpreter. Once these libraries have been installed this file can be ran. 
+If you want to run the comparisons.py file there are a few different depenancies that will need to be installed prior to running the file. Firstly, the libraries matplotlib and numpy must be installed on the selected python interpreter. Once these libraries have been installed this file can be ran in the same way as the other event_planner files. Also the event_planner.py file will need to be downloaded on the computer that the comparisons.py file is being ran on as there are 2 imported functions from event_planner.py.
 
