@@ -22,9 +22,9 @@ def dynamic(file):
 
 #dp Table  
 #, how it works  creates a table  with enjoyment and time   and adds  activitys for best enjoyment  
-for every  number of activies  for every maxing time 
+#for every  number of activies  for every maxing time 
 #  for example  0 activities the best enjoyement will be 0  for each ax time , 
-1 activity the best enjoyment will be tdecided best on the  available time  and so forth 
+#1 activity the best enjoyment will be tdecided best on the  available time  and so forth 
 def dp_table(activities,n,time):
     #storing  maximum enjoyment and time 
     dp = [[0 for  i in range (time+1)]for  k in range(n+1)] # creates a 2d table with 0s 
