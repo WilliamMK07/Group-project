@@ -20,9 +20,11 @@ def dynamic(file):
     #print(dp)
     return(dp_best(dp,activities,n,time,budget))
 
-#dp Table   attempt 1 
-#, how it works  creates a table  with enjoyment and time   and adds  activitys for best enjoyment  for every  number of activies  for every maxing time 
-#  for example  0 activities the best enjoyement will be 0  for each ax time ,  1 activity the best enjoyment will be tdecided best on the  available time  and so forth 
+#dp Table  
+#, how it works  creates a table  with enjoyment and time   and adds  activitys for best enjoyment  
+for every  number of activies  for every maxing time 
+#  for example  0 activities the best enjoyement will be 0  for each ax time , 
+1 activity the best enjoyment will be tdecided best on the  available time  and so forth 
 def dp_table(activities,n,time):
     #storing  maximum enjoyment and time 
     dp = [[0 for  i in range (time+1)]for  k in range(n+1)] # creates a 2d table with 0s 
@@ -35,13 +37,9 @@ def dp_table(activities,n,time):
             if activity_time <= t: #  compares  activity time to  the  current time limit  and gives two options 
                 #   option one takes the activity and  adds the enjoyment 
                 dp[i][t] = max(dp[i-1][t],dp[i-1][t-activity_time] + activity_enjoyment)#  finds the highest 
-
-                #store which activity 
                 
             else:
                 dp[i][t] = dp[i-1][t] #  option 2 skips  the activity and go to the next one 
-    # for i in range(len(dp)-1,0,-1):
-    #     print(i,dp[i])
     return dp
 
 def dp_best(dp,activities,n,time,budget):
