@@ -1,5 +1,5 @@
 import time
-
+import sys
 def read_input(filename):
 
     with open(filename, "r") as f:
@@ -88,4 +88,5 @@ def print_results(filename):
     print(f"\nExecution Time: {execution_time:.6f} seconds")
 
 # RUN THE PROGRAM
-print_results("input_large.txt")
+if __name__ == "__main__":
+    print_results(sys.argv[1]) 

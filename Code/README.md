@@ -4,6 +4,10 @@ Running the file can be done in the terminal using the python command. Using the
 
 To run this program in the terminal use "python Code/event_planner.py Input_Files/input_10.txt", replacing the "input_10.txt" with a file of your choice as well as the "event_planner.py" with a python file of your choice. Run this in the main terminal and not inside any enclosed files as some of the reasources may not be accessible inside separate files.
 
+When running the code, if you have chosen to run the program on a text file that has more activities than the "input_20.txt" file it will not function correctly as the brute force algorithm cannot compute that many possibilities in a suitable time-frame. If you would like to run files that have a larger lengthn then please use just the dynamic algorithm which is stored in the "Code" file named "Dynamics.py". This can be ran in the same way as the other programs. 
+
+When running the "comparisions.py" there is no need to choose an input file to run it. It can be ran using just: "python Code/comparisons.py" or by pressing the run button in an IDE. This is because no input file is used on this file so it can be ran with no arguments passed in. 
+
 # Libraries and dependancies:
 
 The main dependancy for running this program is having python installed. Having an updated version of python such as python 3.13 is necessary for the execution of this program. 
