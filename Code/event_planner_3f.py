@@ -57,6 +57,8 @@ def brute_combo(file):
 
 def powerset(array): # this is the function that is used to create the powerset of the array
     s = list(array) # makes sure the array is a list
+    # this is from stack overflow - https://stackoverflow.com/questions/24502705/what-is-the-fastest-way-of-computing-powerset-of-an-array-in-python
+    # properly referenced in the documentation
     # returns the list of activities by making every subset combination of the list. It starts from 1 instead of 0
     # as the value at index 0 will be the empty set. This would cause errors when indexing later. 
     return list(chain.from_iterable(combinations(s, r) for r in range(1,len(s)+1)))

@@ -52,7 +52,9 @@ def brute_combo(file):
     # return the best subset which is the result, the happiness,budget and time of this result. and the time and budget limits from the file
     return result, max_happiness, max_budget, max_time, budget,time
 
-def powerset(array): # this is the function that is used to create the powerset of the array
+def powerset(array): # this is the function that is used to create the powerset of the array 
+    # this is from stack overflow - https://stackoverflow.com/questions/24502705/what-is-the-fastest-way-of-computing-powerset-of-an-array-in-python
+    # properly referenced in the documentation
     s = list(array) # makes sure the array is a list
     # returns the list of activities by making every subset combination of the list. It starts from 1 instead of 0
     # as the value at index 0 will be the empty set. This would cause errors when indexing later. 
